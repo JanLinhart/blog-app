@@ -1,0 +1,32 @@
+ {%extends "entries/base.html"%}
+ <div class="col-md-8">
+
+        {%block content%}   
+        <a href="{% url 'blog-home'%}">Back home</a>
+        <div class="col-md-8">
+        <div class="card mb-4 mt-4">
+          <div class="card-body">
+            <h2 class="card-title">{{entry.entry_title}}</h2>
+            <p class="card-text">{{entry.entry_text|linebreaks}}</p>
+           
+          </div>
+          <div class="card-footer text-muted">
+            {{entry.entry_date}}
+            <span class= "text-info mr-2">{{entry.entry_author}}</span>
+          </div>
+        </div>
+
+        <!-- Pagination -->
+        <ul class="pagination justify-content-center mb-4">
+          <li class="page-item">
+            <a class="page-link" href="#">&larr; Previous Page</a>
+          </li>
+          <li class="page-item">
+            <a class="page-link" href="#">Next Page &rarr;</a>
+          </li>
+        </ul>
+
+      </div>
+ 
+{%endblock%}
+
